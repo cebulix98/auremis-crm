@@ -10,18 +10,18 @@ class Miner extends Model
 {
     use HasFactory;
 
-    public int $budget;
-    public int $provision;
-    public int $hashrateMin = 0;
-    public int $hashrateMax = 0;
-    public int $powerMin = 0;
-    public int $powerMax = 0;
-    public int $provision_real = 0;
-    public int $miner_cost = 0;
-    public int $gpu = 0;
-    public int $gpu_amount = 0;
-    public int $miners_amount = 0;
-    public int $miners_base_cost = 0;
-    public int $psu_amount = 0;
-    public int $psu_power = 0;
+    protected int $budget;
+    protected int $provision;
+    protected int $hashrateMin = 0;
+    protected int $hashrateMax = 0;
+    protected int $powerMin = 0;
+    protected int $powerMax = 0;
+    protected int $provision_real = 0;
+    protected int $miner_cost = 0;
+    protected int $gpu = 0;
+    protected int $gpu_amount = 0;
+    protected int $miners_amount = 0;
+    protected int $miners_base_cost = 0;
+    protected int $psu_amount = 0;
+    protected int $psu_power = 0;
 }

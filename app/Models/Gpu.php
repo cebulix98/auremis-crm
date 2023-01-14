@@ -13,11 +13,11 @@ class Gpu extends Model
         'name','hashrateMin', 'hashrateMax', 'powerMin', 'powerMax', 'price'
     ];
 
-    public $name;
-    public $hashrateMin;
-    public $hashrateMax;
-    public $powerMin;
-    public $powerMax;
-    public $price;
+    protected $name;
+    protected $hashrateMin;
+    protected $hashrateMax;
+    protected $powerMin;
+    protected $powerMax;
+    protected $price;
 
 }

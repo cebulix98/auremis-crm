@@ -17,17 +17,17 @@ class GpuFactory extends Factory
     public function definition()
     {
 
-        $hashrateMin = rand(2000, 9000);
-        $powerMin = rand(($hashrateMin * 2), ($hashrateMin * 4));
-        $gpus = ['rtx 3060', 'rtx 3070', 'rtx 3060 ti'];
+        $hashrateMin = rand(30, 200);
+        $powerMin = rand(($hashrateMin * 2), ($hashrateMin * 3));
+        $gpus = ['rtx 3060', 'rtx 3070', 'rtx 3060 ti', 'rx 580', 'rx 5700XT'];
 
         return [
             'name' => $gpus[array_rand($gpus)],
             'hashrateMin' => $hashrateMin,
-            'hashrateMax' => rand($hashrateMin + 100, $hashrateMin + 400),
+            'hashrateMax' => rand($hashrateMin + 10, $hashrateMin + 20),
             'powerMin' => $powerMin,
-            'powerMax' => rand($powerMin + 10, $powerMin + 100),
-            'price' => rand($powerMin * 0.5, $powerMin)
+            'powerMax' => rand($powerMin + 30, $powerMin + 60),
+            'price' => rand($hashrateMin * 10, $hashrateMin * 30)
         ];
     }
 }

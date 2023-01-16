@@ -6,15 +6,15 @@ use App\Http\Controllers\GpuController;
 use App\Http\Controllers\MinerController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('main');
 });
 
 Route::get('/gpu/list', function () {
     return Gpu::all()->toJson();
 });
 
-Route::get('/gpu/${gpu}', function (Gpu $gpu) {
-    return $gpu->toJson();
+Route::get('/gpu', function (Gpu $gpu) {
+    return view('gpu');
 });
 
 Route::get('/token', function () {

@@ -29,7 +29,7 @@ export default {
     width: 100%;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: min-content;
+    grid-auto-rows: min-content;
     box-shadow: 1px 3px 3px rgb(0 0 0 / 50%);
 }
 </style>

@@ -19,8 +19,23 @@ class GpuController extends Controller
         ]);
 
         $gpu = Gpu::create($formFields);
+    }
 
-        return redirect('/gpu/list')->with('message', 'Karta graficzna została dodana');
+    public function getFilteredGpus(Request $request)
+    {
+        $query = Gpu::query();
+
+        if(isset($request->name)) $query->where('name', 'LIKE', "%{$request->name}%");
+
+        if(isset($request->priceMin) && isset($request->priceMax)) $query->whereBetween('price', [$request->priceMin, $request->priceMax]);
+        elseif(isset($request->priceMin)) $query->where('price', '>', $request->priceMin);
+        elseif(isset($request->priceMax)) $query->where('price', '<', $request->priceMax);
+        
+        if(isset($request->hashrateMin) && isset($request->hashrateMax)) $query->whereBetween('hashrateMin', [$request->hashrateMin, $request->hashrateMax]);
+        elseif(isset($request->hashrateMin)) $query->where('hashrateMin', '>', $request->hashrateMin);
+        elseif(isset($request->hashrateMax)) $query->where('hashrateMin', '<', $request->hashrateMax);
+
+        return $query->get()->toJson();
     }
 
 }

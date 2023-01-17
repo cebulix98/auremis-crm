@@ -3,6 +3,7 @@
 use App\Models\Gpu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GpuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/gpu', function () {
     return GPU::all()->toJson();
 });
+
+Route::get('/gpu/filtered', [GpuController::class, 'getFilteredGpus']);
+
+Route::post('/gpu/add', [GpuController::class, 'store']);

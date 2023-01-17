@@ -23,5 +23,4 @@ Route::get('/token', function () {
 
 Route::post('/miner/build', [MinerController::class, 'build']);
 
-Route::post('/gpu/add', [GpuController::class, 'store']);
 

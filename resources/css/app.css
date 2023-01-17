@@ -7,3 +7,8 @@ body {
     box-sizing: border-box;
     font-family: "roboto";
 }
+
+.floating-tile {
+    border: 1px solid #999;
+    box-shadow: 1px 1px 5px -1px rgb(0 0 0 / 50%);
+}

@@ -33,9 +33,13 @@ import TopBar from './TopBar.vue';
 
 .workspace{
     position: relative;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-auto-rows: min-content;
+    grid-row-gap: 10px;
     overflow-y: scroll;
     border: 1px solid #999;
-    padding: 10px 0px 0px 10px;
+    padding: 10px 10px 0px 10px;
 }
 
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <table class="custom-table">
+    <table class="custom-table floating-tile">
         <thead>
             <template v-for="key in keys">
                 <th v-if="key.sortable" class="custom-table-sortable" @click="changeSorting(key.key)">
